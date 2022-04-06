@@ -37,7 +37,7 @@ trait HasConditionalContainer
      * @param NovaRequest $request
      * @return array
      */
-    public function availablePanelsForDetail(NovaRequest $request, Resource $resource)
+    public function availablePanelsForDetail(NovaRequest $request, Resource $resource, FieldCollection $fields)
     {
         $panels = parent::availablePanelsForDetail($request, $resource);
         $fields = parent::availableFields($request);
@@ -52,7 +52,7 @@ trait HasConditionalContainer
      *
      * @return array
      */
-    public function availablePanelsForCreate($request)
+    public function availablePanelsForCreate($request, FieldCollection $fields = null)
     {
         $panels = parent::availablePanelsForCreate($request);
         $fields = parent::availableFields($request);
@@ -67,7 +67,7 @@ trait HasConditionalContainer
      *
      * @return array
      */
-    public function availablePanelsForUpdate(NovaRequest $request, Resource $resource = null)
+    public function availablePanelsForUpdate(NovaRequest $request, Resource $resource = null, FieldCollection $fields = null)
     {
         $panels = parent::availablePanelsForUpdate($request, $resource);
         $fields = parent::availableFields($request);
