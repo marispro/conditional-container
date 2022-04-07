@@ -39,7 +39,7 @@ trait HasConditionalContainer
      */
     public function availablePanelsForDetail(NovaRequest $request, Resource $resource, FieldCollection $fields)
     {
-        $panels = parent::availablePanelsForDetail($request, $resource);
+        $panels = parent::availablePanelsForDetail($request, $resource, $fields);
         $fields = parent::availableFields($request);
 
         return $this->mergePanels($panels, $this->findAllActiveContainers($fields, $this));
